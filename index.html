@@ -249,7 +249,7 @@ var originalData = [];
 
 // Wrap data read in a promise to ensure data is read in before being referenced later on
 var dataRead = new Promise(function(resolve, reject){
-  d3.csv("data/KnifePossQ22017.csv", function(error, data) {
+  d3.csv("data/sankey_data.csv", function(error, data) {
     
     if(error) reject(error);
 
