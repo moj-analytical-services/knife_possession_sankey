@@ -129,7 +129,7 @@ h1 {
       <img src="https://moj-analytical-services.github.io/criminal_justice_statistics_sankey/data/moj_logo.png" id = "moj_logo">
     </div>
     <div id = "head1">
-      <h1>Outcomes and criminal history of offenders sentenced or cautioned for a knife possession offence</h1>
+      <h1>Outcomes and criminal history of offenders sentenced or cautioned for a knife or offensive weapon offence</h1>
       <div id = "button_div">
         <button id = "caveat_button" type="button" class="btn btn-info" data-toggle="collapse" data-target="#caveats">Hide Explanatory Notes</button>
         <button id = "filter_options_button" type="button" class="btn btn-info" data-toggle="collapse" data-target="#filterOptions">Hide filter options</button>
@@ -140,22 +140,22 @@ h1 {
   <div id="caveats" class="collapse">
   <h3> Explanatory Notes</h3>
   <ol>
-  <li> Knife possession offences include:
+  <li> Knife or offensive weapon offences include:
    <ol type ="a">
      <li> Possession of an article with a blade or point in a public place or on school premises,
      <li> Possession of an offensive weapon without lawful authority or reasonable excuse in a public place or on school premises,
      <li> Threatening with a knife or offensive weapon in a public place or on school premises</ol>
-  <li> The thickness of the lines in the graph below represents the number of cautioning and sentencing occasions for knife possession offences which were prosecuted by police forces in England and Wales including the British Transport Police. The thicker the line the greater the number of caution and sentencing occasions. Individual offenders may appear more than once in each year where they have been cautioned or sentenced on multiple occasions within the year.</li>
-  <li> The gender, age group and the year in which the knife possession offence was cautioned or sentenced displayed in the graph below can all be adjusted using the filters and check boxes at the side of the screen.</li>
+  <li> The thickness of the lines in the graph below represents the number of cautioning and sentencing occasions for knife or offensive weapon offences which were prosecuted by police forces in England and Wales including the British Transport Police. The thicker the line the greater the number of caution and sentencing occasions. Individual offenders may appear more than once in each year where they have been cautioned or sentenced on multiple occasions within the year.</li>
+  <li> The gender, age group and the year in which the knife and offensive weapon offence was cautioned or sentenced displayed in the graph below can all be adjusted using the filters and check boxes at the side of the screen.</li>
   <li>The data have been taken from the Ministry of Justice extract of the Police National Computer (PNC). The PNC is the system used by the police to record convictions and cautions for recordable offences.</li>
   <li>This e-graph is based on data available at time of publication and does not take into account disposals in cases still going through the Criminal Justice System.</li>
   <li>Threatening with a knife or offensive weapon offences were introduced in December 2012 and will only be included in the figures from this point on.</li>
-  <li>Previous offences in the graph below have been defined in the following format ‘Blade or Point – 0 Previous Offences
-‘ the first element indicates the offence type which the offender was sentenced or cautioned to in the time period (Blade or point in this case), whilst the second element refers to the number of previous offences involving the possession of a knife or offensive weapon the offender has been convicted or cautioned for.
+  <li>Previous offences in the graph below have been defined in the following format 'Blade or Point – 0 Previous Offences'.
+ The first element indicates the offence type which the offender was convicted or cautioned for in the time period (Blade or point in this case), whilst the second element refers to the number of previous offences involving the possession of a knife or offensive weapon the offender has been convicted or cautioned for.
 </li>
   <li>The disposal type refers to the most severe penalty received by the offender for the knife possession offence on that sentencing occasion. </li>
   <li>Cautions include juvenile reprimands, warnings, or youth cautions.</li>
-  <li>Other disposals includes absolute or conditional discharges, fines, cases where an offender is committed to the Crown Court for sentencing or otherwise dealt with on conviction and so on. </li>
+  <li>Other disposals include absolute or conditional discharges, fines, cases where an offender is committed to the Crown Court for sentencing or otherwise dealt with on conviction and so on. </li>
   <li> Total figures exclude offenders who age group or disposal is unknown.</li>
   <li> Total figures include offenders whose sex is "Not Stated".</li>
   </ol>
@@ -163,7 +163,7 @@ h1 {
 
 <div id = "filterOptions">
   <div class="control">
-    <label for ="year"><b>Select 12 months ending September:</b></label>
+    <label for ="year"><b>Select 12 months ending December:</b></label>
     <select id = "year">
       <option>2017</option> 
       <option>2016</option>
@@ -174,6 +174,7 @@ h1 {
       <option>2011</option>
       <option>2010</option>
       <option>2009</option>
+      <option>2008</option>
      <!-- <option>2007</option>
       <option>2006</option>-->
     </select>
