@@ -1,4 +1,1479 @@
-library(mojrap)
-?mojrap
-training_dataset       <- readr::read_csv(" ~/r-excel-training/excel_exercises_dataset.csv ") 
-?summarise
+year,offence_type,offence_group,source,target,value
+2011,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,652
+2011,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,147
+2011,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,142
+2011,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,208
+2011,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,86
+2011,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,102
+2011,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,114
+2011,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Caution,4
+2011,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,51
+2011,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,19
+2011,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,49
+2011,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,24
+2011,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,560
+2011,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,54
+2011,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,299
+2011,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,88
+2011,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,51
+2011,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,53
+2011,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,69
+2011,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Caution,5
+2011,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,14
+2011,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,7
+2011,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,19
+2011,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,9
+2011,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,193
+2011,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,11
+2011,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,63
+2011,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,110
+2011,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,3
+2011,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,17
+2011,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,6
+2011,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,2
+2011,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,3
+2011,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,111
+2011,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,9
+2011,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,42
+2011,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,60
+2011,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,5
+2011,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,4
+2011,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,6
+2011,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Immediate Custody,2
+2011,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Other,1
+2011,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,5486
+2011,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,2276
+2011,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,994
+2011,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,1535
+2011,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,855
+2011,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,1209
+2011,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,893
+2011,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Caution,54
+2011,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,532
+2011,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,383
+2011,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,1038
+2011,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,269
+2011,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,5617
+2011,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,1468
+2011,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,1877
+2011,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,1343
+2011,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,679
+2011,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,1031
+2011,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,687
+2011,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Caution,92
+2011,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,371
+2011,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,231
+2011,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,616
+2011,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,158
+2011,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,1609
+2011,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,210
+2011,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,461
+2011,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,911
+2011,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,133
+2011,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,104
+2011,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Caution,5
+2011,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,140
+2011,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,52
+2011,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,13
+2011,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,1635
+2011,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,167
+2011,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,639
+2011,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,779
+2011,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,121
+2011,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,96
+2011,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Caution,3
+2011,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,102
+2011,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Immediate Custody,44
+2011,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Other,18
+2011,Not Stated,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,7
+2011,Not Stated,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,1
+2011,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,1
+2011,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,2
+2011,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,2
+2011,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,2
+2011,Not Stated,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,1
+2011,Not Stated,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,9
+2011,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,6
+2011,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,2
+2011,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,1
+2011,Not Stated,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,2
+2011,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,1
+2011,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,1
+2011,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,3
+2011,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,2
+2011,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,1
+2012,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,640
+2012,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,171
+2012,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,136
+2012,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,188
+2012,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,115
+2012,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,86
+2012,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,115
+2012,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Caution,4
+2012,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,61
+2012,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,23
+2012,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,48
+2012,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,35
+2012,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,350
+2012,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,55
+2012,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,136
+2012,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,84
+2012,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,47
+2012,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,49
+2012,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,34
+2012,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Caution,1
+2012,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,17
+2012,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,9
+2012,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,21
+2012,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,7
+2012,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,168
+2012,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,16
+2012,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,59
+2012,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,100
+2012,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,5
+2012,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,4
+2012,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,7
+2012,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,8
+2012,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,1
+2012,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,87
+2012,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,9
+2012,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,39
+2012,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,38
+2012,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,3
+2012,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,7
+2012,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,7
+2012,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Other,2
+2012,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,5329
+2012,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,2406
+2012,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,953
+2012,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,1407
+2012,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,764
+2012,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,1391
+2012,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,814
+2012,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Caution,64
+2012,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,496
+2012,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,409
+2012,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,1152
+2012,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,285
+2012,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,5100
+2012,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,1501
+2012,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,1605
+2012,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,1135
+2012,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,659
+2012,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,1079
+2012,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,622
+2012,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Caution,113
+2012,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,318
+2012,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,228
+2012,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,697
+2012,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,145
+2012,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,1520
+2012,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,208
+2012,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,389
+2012,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,912
+2012,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,132
+2012,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,87
+2012,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Caution,2
+2012,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,117
+2012,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,72
+2012,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,17
+2012,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,1267
+2012,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,162
+2012,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,434
+2012,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,638
+2012,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,124
+2012,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,71
+2012,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Caution,3
+2012,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,83
+2012,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Immediate Custody,56
+2012,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Other,20
+2012,Not Stated,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,4
+2012,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,2
+2012,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,2
+2012,Not Stated,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,11
+2012,Not Stated,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,1
+2012,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,8
+2012,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,1
+2012,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,2
+2012,Not Stated,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,1
+2012,Not Stated,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,4
+2012,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,2
+2012,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,2
+2012,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,7
+2012,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,5
+2012,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,2
+2013,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,539
+2013,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,130
+2013,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,147
+2013,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,167
+2013,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,79
+2013,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,84
+2013,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,62
+2013,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Caution,2
+2013,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,36
+2013,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,16
+2013,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,51
+2013,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,25
+2013,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,299
+2013,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,48
+2013,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,112
+2013,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,60
+2013,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,48
+2013,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,36
+2013,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,43
+2013,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Caution,3
+2013,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,9
+2013,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,11
+2013,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,20
+2013,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,5
+2013,Female,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,1
+2013,Female,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,1
+2013,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Immediate Custody,1
+2013,Female,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Suspended Sentence,1
+2013,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,145
+2013,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,12
+2013,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,61
+2013,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,71
+2013,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,8
+2013,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,5
+2013,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,7
+2013,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,2
+2013,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,3
+2013,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,58
+2013,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,3
+2013,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,29
+2013,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,22
+2013,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,6
+2013,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,1
+2013,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,1
+2013,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Immediate Custody,1
+2013,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Other,1
+2013,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,4413
+2013,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,2155
+2013,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,774
+2013,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,1072
+2013,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,736
+2013,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,1182
+2013,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,649
+2013,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Caution,59
+2013,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,432
+2013,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,376
+2013,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,1064
+2013,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,224
+2013,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,4106
+2013,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,1252
+2013,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,1242
+2013,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,857
+2013,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,585
+2013,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,931
+2013,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,491
+2013,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Caution,62
+2013,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,256
+2013,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,193
+2013,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,592
+2013,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,149
+2013,Male,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,5
+2013,Male,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,2
+2013,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Suspended Sentence,1
+2013,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Immediate Custody,4
+2013,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Immediate Custody,2
+2013,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,1212
+2013,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,162
+2013,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,349
+2013,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,667
+2013,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,105
+2013,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,91
+2013,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Caution,2
+2013,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,90
+2013,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,53
+2013,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,17
+2013,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,918
+2013,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,100
+2013,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,351
+2013,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,425
+2013,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,80
+2013,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,62
+2013,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Caution,2
+2013,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,59
+2013,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Immediate Custody,26
+2013,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Other,13
+2013,Male,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,6
+2013,Male,Juvenile (Aged 10 to 17),Threatening,Threatening - 1+ Previous offences,1
+2013,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Caution,2
+2013,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Community Sentence,2
+2013,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Immediate Custody,2
+2013,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Community Sentence,1
+2013,Not Stated,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,6
+2013,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,1
+2013,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,2
+2013,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,1
+2013,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,2
+2013,Not Stated,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,11
+2013,Not Stated,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,3
+2013,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,6
+2013,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,2
+2013,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,1
+2013,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,2
+2013,Not Stated,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,1
+2013,Not Stated,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,2
+2013,Not Stated,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,7
+2013,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,2
+2013,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,4
+2013,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,1
+2013,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,4
+2013,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,2
+2013,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,2
+2014,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,560
+2014,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,130
+2014,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,113
+2014,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,159
+2014,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,109
+2014,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,90
+2014,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,89
+2014,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Caution,4
+2014,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,37
+2014,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,30
+2014,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,42
+2014,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,17
+2014,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,295
+2014,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,45
+2014,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,90
+2014,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,73
+2014,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,63
+2014,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,37
+2014,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,32
+2014,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Caution,1
+2014,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,20
+2014,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,6
+2014,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,15
+2014,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,3
+2014,Female,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,15
+2014,Female,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,1
+2014,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Caution,2
+2014,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Community Sentence,4
+2014,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Suspended Sentence,5
+2014,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Immediate Custody,4
+2014,Female,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Community Sentence,1
+2014,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,138
+2014,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,8
+2014,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,54
+2014,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,67
+2014,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,7
+2014,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,10
+2014,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Caution,1
+2014,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,3
+2014,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,3
+2014,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,1
+2014,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,61
+2014,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,12
+2014,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,23
+2014,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,28
+2014,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,6
+2014,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,4
+2014,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,8
+2014,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Immediate Custody,3
+2014,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Other,1
+2014,Female,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,7
+2014,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Community Sentence,6
+2014,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Other,1
+2014,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,4495
+2014,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,2224
+2014,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,614
+2014,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,1170
+2014,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,843
+2014,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,1191
+2014,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,677
+2014,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Caution,42
+2014,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,406
+2014,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,414
+2014,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,1121
+2014,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,241
+2014,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,3716
+2014,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,1150
+2014,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,934
+2014,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,820
+2014,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,606
+2014,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,869
+2014,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,487
+2014,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Caution,55
+2014,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,234
+2014,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,212
+2014,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,532
+2014,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,117
+2014,Male,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,111
+2014,Male,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,51
+2014,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Caution,3
+2014,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Community Sentence,13
+2014,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Suspended Sentence,30
+2014,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Immediate Custody,62
+2014,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Other,3
+2014,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Suspended Sentence,8
+2014,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Immediate Custody,41
+2014,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Other,2
+2014,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,1126
+2014,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,209
+2014,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,333
+2014,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,600
+2014,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,109
+2014,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,84
+2014,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Caution,4
+2014,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,114
+2014,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,64
+2014,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,27
+2014,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,826
+2014,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,106
+2014,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,307
+2014,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,390
+2014,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,68
+2014,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,61
+2014,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Caution,6
+2014,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,63
+2014,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Immediate Custody,24
+2014,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Other,13
+2014,Male,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,50
+2014,Male,Juvenile (Aged 10 to 17),Threatening,Threatening - 1+ Previous offences,3
+2014,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Caution,3
+2014,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Community Sentence,24
+2014,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Immediate Custody,20
+2014,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Other,3
+2014,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Community Sentence,2
+2014,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Immediate Custody,1
+2014,Not Stated,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,6
+2014,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,3
+2014,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,2
+2014,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,1
+2014,Not Stated,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,11
+2014,Not Stated,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,1
+2014,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,8
+2014,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,2
+2014,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,1
+2014,Not Stated,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,1
+2014,Not Stated,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,6
+2014,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,3
+2014,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,3
+2014,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,3
+2014,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,1
+2014,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,2
+2014,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,1
+2014,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,1
+2015,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,541
+2015,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,145
+2015,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,82
+2015,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,155
+2015,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,114
+2015,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,97
+2015,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,93
+2015,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Caution,3
+2015,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,28
+2015,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,51
+2015,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,44
+2015,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,19
+2015,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,273
+2015,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,35
+2015,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,85
+2015,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,70
+2015,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,49
+2015,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,39
+2015,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,30
+2015,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Caution,1
+2015,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,9
+2015,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,7
+2015,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,14
+2015,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,4
+2015,Female,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,28
+2015,Female,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,2
+2015,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Caution,1
+2015,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Community Sentence,5
+2015,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Suspended Sentence,10
+2015,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Immediate Custody,9
+2015,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Other,3
+2015,Female,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Immediate Custody,2
+2015,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,148
+2015,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,13
+2015,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,71
+2015,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,66
+2015,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,3
+2015,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,8
+2015,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,6
+2015,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,5
+2015,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,2
+2015,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,50
+2015,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,1
+2015,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,24
+2015,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,21
+2015,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,1
+2015,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,4
+2015,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,1
+2015,Female,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,3
+2015,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Community Sentence,3
+2015,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,4570
+2015,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,2071
+2015,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,537
+2015,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,1047
+2015,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,1024
+2015,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,1274
+2015,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,688
+2015,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Caution,30
+2015,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,331
+2015,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,453
+2015,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,1051
+2015,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,206
+2015,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,3374
+2015,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,1124
+2015,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,763
+2015,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,678
+2015,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,637
+2015,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,831
+2015,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,465
+2015,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Caution,37
+2015,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,172
+2015,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,202
+2015,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,575
+2015,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,138
+2015,Male,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,205
+2015,Male,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,118
+2015,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Caution,5
+2015,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Community Sentence,15
+2015,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Suspended Sentence,36
+2015,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Immediate Custody,136
+2015,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Other,13
+2015,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Community Sentence,9
+2015,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Suspended Sentence,19
+2015,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Immediate Custody,85
+2015,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Other,5
+2015,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,1379
+2015,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,218
+2015,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,423
+2015,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,762
+2015,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,107
+2015,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,87
+2015,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Caution,4
+2015,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,131
+2015,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,63
+2015,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,20
+2015,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,888
+2015,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,100
+2015,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,305
+2015,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,435
+2015,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,89
+2015,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,59
+2015,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Caution,7
+2015,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,55
+2015,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Immediate Custody,30
+2015,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Other,8
+2015,Male,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,75
+2015,Male,Juvenile (Aged 10 to 17),Threatening,Threatening - 1+ Previous offences,11
+2015,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Caution,11
+2015,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Community Sentence,35
+2015,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Immediate Custody,19
+2015,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Other,10
+2015,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Community Sentence,5
+2015,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Immediate Custody,5
+2015,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Other,1
+2015,Not Stated,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,7
+2015,Not Stated,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,1
+2015,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,1
+2015,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,4
+2015,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,2
+2015,Not Stated,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,1
+2015,Not Stated,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,8
+2015,Not Stated,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,1
+2015,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,5
+2015,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,1
+2015,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,1
+2015,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,1
+2015,Not Stated,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,1
+2015,Not Stated,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,6
+2015,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,4
+2015,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,2
+2015,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,3
+2015,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,2
+2015,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,1
+2015,Not Stated,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,1
+2015,Not Stated,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Community Sentence,1
+2016,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,566
+2016,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,157
+2016,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,82
+2016,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,129
+2016,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,162
+2016,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,96
+2016,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,97
+2016,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,36
+2016,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,36
+2016,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,70
+2016,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,15
+2016,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,265
+2016,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,44
+2016,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,61
+2016,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,65
+2016,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,63
+2016,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,37
+2016,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,39
+2016,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,8
+2016,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,11
+2016,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,23
+2016,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,2
+2016,Female,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,31
+2016,Female,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,3
+2016,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Community Sentence,5
+2016,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Suspended Sentence,8
+2016,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Immediate Custody,16
+2016,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Other,2
+2016,Female,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Immediate Custody,3
+2016,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,183
+2016,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,7
+2016,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,86
+2016,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,81
+2016,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,3
+2016,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,13
+2016,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,5
+2016,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,1
+2016,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,1
+2016,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,67
+2016,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,3
+2016,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,34
+2016,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,29
+2016,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,1
+2016,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,3
+2016,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,3
+2016,Female,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,7
+2016,Female,Juvenile (Aged 10 to 17),Threatening,Threatening - 1+ Previous offences,1
+2016,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Caution,1
+2016,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Community Sentence,5
+2016,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Other,1
+2016,Female,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Immediate Custody,1
+2016,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,4804
+2016,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,2259
+2016,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,479
+2016,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,1044
+2016,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,1232
+2016,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,1380
+2016,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,669
+2016,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Caution,20
+2016,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,263
+2016,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,458
+2016,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,1327
+2016,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,191
+2016,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,3552
+2016,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,1173
+2016,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,690
+2016,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,751
+2016,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,772
+2016,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,893
+2016,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,446
+2016,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Caution,37
+2016,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,149
+2016,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,244
+2016,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,624
+2016,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,119
+2016,Male,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,297
+2016,Male,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,164
+2016,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Caution,7
+2016,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Community Sentence,23
+2016,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Suspended Sentence,67
+2016,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Immediate Custody,183
+2016,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Other,17
+2016,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Community Sentence,9
+2016,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Suspended Sentence,21
+2016,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Immediate Custody,128
+2016,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Other,6
+2016,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,1625
+2016,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,275
+2016,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,486
+2016,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,915
+2016,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,120
+2016,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,104
+2016,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Caution,3
+2016,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,149
+2016,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,95
+2016,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,28
+2016,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,1002
+2016,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,139
+2016,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,410
+2016,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,446
+2016,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,73
+2016,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,73
+2016,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,68
+2016,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Immediate Custody,57
+2016,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Other,14
+2016,Male,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,121
+2016,Male,Juvenile (Aged 10 to 17),Threatening,Threatening - 1+ Previous offences,21
+2016,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Caution,16
+2016,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Community Sentence,62
+2016,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Immediate Custody,28
+2016,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Other,15
+2016,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Community Sentence,11
+2016,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Immediate Custody,7
+2016,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Other,3
+2016,Not Stated,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,12
+2016,Not Stated,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,1
+2016,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,4
+2016,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,5
+2016,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,2
+2016,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,1
+2016,Not Stated,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,1
+2016,Not Stated,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,13
+2016,Not Stated,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,1
+2016,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,7
+2016,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,2
+2016,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,2
+2016,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,2
+2016,Not Stated,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,1
+2016,Not Stated,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,1
+2016,Not Stated,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Immediate Custody,1
+2016,Not Stated,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,12
+2016,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,8
+2016,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,2
+2016,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,2
+2016,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,3
+2016,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,2
+2016,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,1
+2017,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,633
+2017,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,150
+2017,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,72
+2017,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,156
+2017,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,170
+2017,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,129
+2017,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,106
+2017,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Caution,2
+2017,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,18
+2017,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,51
+2017,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,69
+2017,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,10
+2017,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,273
+2017,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,39
+2017,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,63
+2017,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,67
+2017,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,64
+2017,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,48
+2017,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,31
+2017,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Caution,4
+2017,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,2
+2017,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,11
+2017,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,21
+2017,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,1
+2017,Female,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,29
+2017,Female,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,16
+2017,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Caution,1
+2017,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Community Sentence,3
+2017,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Suspended Sentence,13
+2017,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Immediate Custody,10
+2017,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Other,2
+2017,Female,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Community Sentence,2
+2017,Female,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Suspended Sentence,3
+2017,Female,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Immediate Custody,10
+2017,Female,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Other,1
+2017,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,174
+2017,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,12
+2017,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,86
+2017,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,76
+2017,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,3
+2017,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,9
+2017,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Caution,1
+2017,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,9
+2017,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,2
+2017,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,95
+2017,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,6
+2017,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,47
+2017,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,40
+2017,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,3
+2017,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,5
+2017,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,6
+2017,Female,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,6
+2017,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Caution,2
+2017,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Community Sentence,2
+2017,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Immediate Custody,1
+2017,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Other,1
+2017,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,5117
+2017,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,2622
+2017,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,436
+2017,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,1088
+2017,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,1371
+2017,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,1533
+2017,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,689
+2017,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Caution,24
+2017,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,186
+2017,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,539
+2017,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,1707
+2017,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,166
+2017,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,3571
+2017,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,1333
+2017,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,617
+2017,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,680
+2017,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,836
+2017,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,989
+2017,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,449
+2017,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Caution,36
+2017,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,117
+2017,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,284
+2017,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,795
+2017,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,101
+2017,Male,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,353
+2017,Male,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,215
+2017,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Caution,6
+2017,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Community Sentence,15
+2017,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Suspended Sentence,95
+2017,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Immediate Custody,208
+2017,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Other,29
+2017,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Community Sentence,4
+2017,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Suspended Sentence,23
+2017,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Immediate Custody,175
+2017,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Other,13
+2017,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,1873
+2017,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,367
+2017,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,617
+2017,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,1020
+2017,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,136
+2017,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,100
+2017,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Caution,2
+2017,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,179
+2017,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,157
+2017,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,29
+2017,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,1076
+2017,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,170
+2017,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,436
+2017,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,487
+2017,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,90
+2017,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,63
+2017,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Caution,4
+2017,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,79
+2017,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Immediate Custody,70
+2017,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Other,17
+2017,Male,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,114
+2017,Male,Juvenile (Aged 10 to 17),Threatening,Threatening - 1+ Previous offences,25
+2017,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Caution,20
+2017,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Community Sentence,50
+2017,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Immediate Custody,30
+2017,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Other,14
+2017,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Community Sentence,10
+2017,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Immediate Custody,14
+2017,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Other,1
+2017,Not Stated,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,17
+2017,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,5
+2017,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,3
+2017,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,3
+2017,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,3
+2017,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,3
+2017,Not Stated,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,17
+2017,Not Stated,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,1
+2017,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,10
+2017,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,1
+2017,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,2
+2017,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,4
+2017,Not Stated,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,1
+2017,Not Stated,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,1
+2017,Not Stated,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Community Sentence,1
+2017,Not Stated,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,21
+2017,Not Stated,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,1
+2017,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,11
+2017,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,10
+2017,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,1
+2017,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,9
+2017,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,7
+2017,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,2
+2018,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,659
+2018,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,188
+2018,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,69
+2018,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,167
+2018,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,187
+2018,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,133
+2018,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,103
+2018,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Caution,3
+2018,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,24
+2018,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,49
+2018,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,88
+2018,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,24
+2018,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,249
+2018,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,46
+2018,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,46
+2018,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,52
+2018,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,70
+2018,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,54
+2018,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,27
+2018,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Caution,1
+2018,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,4
+2018,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,18
+2018,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,21
+2018,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,2
+2018,Female,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,58
+2018,Female,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,15
+2018,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Caution,2
+2018,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Community Sentence,5
+2018,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Suspended Sentence,22
+2018,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Immediate Custody,23
+2018,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Other,6
+2018,Female,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Suspended Sentence,2
+2018,Female,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Immediate Custody,13
+2018,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,143
+2018,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,4
+2018,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,72
+2018,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,65
+2018,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,2
+2018,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,4
+2018,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,1
+2018,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,2
+2018,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,1
+2018,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,64
+2018,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,4
+2018,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,24
+2018,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,34
+2018,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,4
+2018,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,2
+2018,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,2
+2018,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Other,2
+2018,Female,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,9
+2018,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Caution,1
+2018,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Community Sentence,5
+2018,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Immediate Custody,2
+2018,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Other,1
+2018,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,5533
+2018,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,2872
+2018,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,385
+2018,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,1150
+2018,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,1504
+2018,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,1836
+2018,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,658
+2018,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Caution,17
+2018,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,182
+2018,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,553
+2018,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,1965
+2018,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,155
+2018,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,3426
+2018,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,1343
+2018,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,549
+2018,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,693
+2018,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,755
+2018,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,1010
+2018,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,419
+2018,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Caution,27
+2018,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,90
+2018,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,254
+2018,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,880
+2018,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,92
+2018,Male,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,430
+2018,Male,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,284
+2018,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Caution,7
+2018,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Community Sentence,18
+2018,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Suspended Sentence,107
+2018,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Immediate Custody,271
+2018,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Other,27
+2018,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Community Sentence,4
+2018,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Suspended Sentence,27
+2018,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Immediate Custody,243
+2018,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Other,10
+2018,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,2063
+2018,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,433
+2018,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,696
+2018,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,1116
+2018,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,148
+2018,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,103
+2018,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Caution,10
+2018,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,213
+2018,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,178
+2018,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,32
+2018,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,1111
+2018,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,189
+2018,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,456
+2018,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,503
+2018,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,91
+2018,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,61
+2018,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Caution,9
+2018,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,88
+2018,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Immediate Custody,78
+2018,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Other,14
+2018,Male,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,107
+2018,Male,Juvenile (Aged 10 to 17),Threatening,Threatening - 1+ Previous offences,44
+2018,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Caution,9
+2018,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Community Sentence,60
+2018,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Immediate Custody,31
+2018,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Other,7
+2018,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Community Sentence,14
+2018,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Immediate Custody,27
+2018,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Other,3
+2018,Not Stated,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,12
+2018,Not Stated,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,3
+2018,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,2
+2018,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,4
+2018,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,1
+2018,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,1
+2018,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,4
+2018,Not Stated,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,3
+2018,Not Stated,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,18
+2018,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,9
+2018,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,2
+2018,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,2
+2018,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,3
+2018,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,2
+2018,Not Stated,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,1
+2018,Not Stated,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Immediate Custody,1
+2018,Not Stated,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,19
+2018,Not Stated,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,2
+2018,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,15
+2018,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,4
+2018,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,2
+2018,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,11
+2018,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,2
+2018,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,7
+2018,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,3
+2018,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,1
+2018,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Immediate Custody,2
+2019,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,694
+2019,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,171
+2019,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,76
+2019,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,163
+2019,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,213
+2019,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,158
+2019,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,84
+2019,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Caution,1
+2019,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,24
+2019,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,33
+2019,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,94
+2019,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,19
+2019,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,257
+2019,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,47
+2019,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,53
+2019,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,75
+2019,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,60
+2019,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,38
+2019,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,31
+2019,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Caution,2
+2019,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,11
+2019,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,8
+2019,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,22
+2019,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,4
+2019,Female,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,41
+2019,Female,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,14
+2019,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Caution,1
+2019,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Community Sentence,5
+2019,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Suspended Sentence,22
+2019,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Immediate Custody,13
+2019,Female,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Community Sentence,1
+2019,Female,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Suspended Sentence,3
+2019,Female,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Immediate Custody,9
+2019,Female,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Other,1
+2019,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,198
+2019,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,20
+2019,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,110
+2019,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,79
+2019,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,1
+2019,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,8
+2019,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Caution,2
+2019,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,12
+2019,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,3
+2019,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,3
+2019,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,46
+2019,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,5
+2019,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,19
+2019,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,23
+2019,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,2
+2019,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,2
+2019,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,1
+2019,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Immediate Custody,4
+2019,Female,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,11
+2019,Female,Juvenile (Aged 10 to 17),Threatening,Threatening - 1+ Previous offences,1
+2019,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Caution,2
+2019,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Community Sentence,6
+2019,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Immediate Custody,1
+2019,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Other,2
+2019,Female,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Community Sentence,1
+2019,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,5883
+2019,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,3041
+2019,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,396
+2019,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,1050
+2019,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,1779
+2019,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,2088
+2019,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,570
+2019,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Caution,22
+2019,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,178
+2019,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,537
+2019,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,2181
+2019,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,123
+2019,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,3621
+2019,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,1455
+2019,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,552
+2019,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,959
+2019,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,705
+2019,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,1014
+2019,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,391
+2019,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Caution,31
+2019,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,143
+2019,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,288
+2019,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,911
+2019,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,82
+2019,Male,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,351
+2019,Male,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,257
+2019,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Caution,8
+2019,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Community Sentence,18
+2019,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Suspended Sentence,70
+2019,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Immediate Custody,238
+2019,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Other,17
+2019,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Caution,1
+2019,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Community Sentence,6
+2019,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Suspended Sentence,29
+2019,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Immediate Custody,213
+2019,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Other,8
+2019,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,2019
+2019,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,441
+2019,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,689
+2019,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,1086
+2019,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,136
+2019,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,108
+2019,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Caution,6
+2019,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,236
+2019,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,160
+2019,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,39
+2019,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,1058
+2019,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,223
+2019,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,398
+2019,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,529
+2019,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,71
+2019,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,60
+2019,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Caution,9
+2019,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,112
+2019,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Immediate Custody,84
+2019,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Other,18
+2019,Male,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,100
+2019,Male,Juvenile (Aged 10 to 17),Threatening,Threatening - 1+ Previous offences,26
+2019,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Caution,15
+2019,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Community Sentence,61
+2019,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Immediate Custody,14
+2019,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Other,10
+2019,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Community Sentence,9
+2019,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Immediate Custody,14
+2019,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Other,3
+2019,Not Stated,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,24
+2019,Not Stated,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,3
+2019,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,4
+2019,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,5
+2019,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,4
+2019,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,8
+2019,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,3
+2019,Not Stated,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,1
+2019,Not Stated,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,2
+2019,Not Stated,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,18
+2019,Not Stated,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,2
+2019,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,5
+2019,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,2
+2019,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,4
+2019,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,3
+2019,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,4
+2019,Not Stated,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,2
+2019,Not Stated,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,1
+2019,Not Stated,Adult (Aged 18 and over),Threatening - 0 Previous offences,Immediate Custody,1
+2019,Not Stated,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,36
+2019,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,31
+2019,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,5
+2019,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,15
+2019,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,13
+2019,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,2
+2019,Not Stated,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,1
+2019,Not Stated,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Community Sentence,1
+2020,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,650
+2020,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,155
+2020,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,63
+2020,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,149
+2020,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,219
+2020,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,137
+2020,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,82
+2020,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Caution,2
+2020,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,24
+2020,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,39
+2020,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,79
+2020,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,11
+2020,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,223
+2020,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,40
+2020,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,47
+2020,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,61
+2020,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,44
+2020,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,45
+2020,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,26
+2020,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Caution,3
+2020,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,12
+2020,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,9
+2020,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,13
+2020,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,3
+2020,Female,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,43
+2020,Female,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,10
+2020,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Community Sentence,6
+2020,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Suspended Sentence,24
+2020,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Immediate Custody,12
+2020,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Other,1
+2020,Female,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Suspended Sentence,2
+2020,Female,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Immediate Custody,7
+2020,Female,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Other,1
+2020,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,185
+2020,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,17
+2020,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,104
+2020,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,64
+2020,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,6
+2020,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,11
+2020,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Caution,1
+2020,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,9
+2020,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,6
+2020,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,1
+2020,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,72
+2020,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,8
+2020,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,36
+2020,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,28
+2020,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,3
+2020,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,5
+2020,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,5
+2020,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Immediate Custody,1
+2020,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Other,2
+2020,Female,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,4
+2020,Female,Juvenile (Aged 10 to 17),Threatening,Threatening - 1+ Previous offences,1
+2020,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Caution,1
+2020,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Community Sentence,2
+2020,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Immediate Custody,1
+2020,Female,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Immediate Custody,1
+2020,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,5743
+2020,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,3077
+2020,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,388
+2020,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,1051
+2020,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,1954
+2020,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,1890
+2020,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,460
+2020,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Caution,23
+2020,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,185
+2020,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,583
+2020,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,2160
+2020,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,126
+2020,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,3330
+2020,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,1373
+2020,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,550
+2020,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,904
+2020,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,634
+2020,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,832
+2020,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,410
+2020,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Caution,25
+2020,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,163
+2020,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,239
+2020,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,870
+2020,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,76
+2020,Male,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,400
+2020,Male,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,245
+2020,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Caution,5
+2020,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Community Sentence,26
+2020,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Suspended Sentence,95
+2020,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Immediate Custody,245
+2020,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Other,29
+2020,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Community Sentence,8
+2020,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Suspended Sentence,23
+2020,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Immediate Custody,200
+2020,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Other,14
+2020,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,1978
+2020,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,433
+2020,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,802
+2020,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,1016
+2020,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,81
+2020,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,79
+2020,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Caution,9
+2020,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,235
+2020,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,148
+2020,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,41
+2020,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,1029
+2020,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,206
+2020,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,459
+2020,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,476
+2020,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,51
+2020,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,43
+2020,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Caution,7
+2020,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,107
+2020,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Immediate Custody,72
+2020,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Other,20
+2020,Male,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,113
+2020,Male,Juvenile (Aged 10 to 17),Threatening,Threatening - 1+ Previous offences,20
+2020,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Caution,22
+2020,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Community Sentence,68
+2020,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Immediate Custody,12
+2020,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Other,11
+2020,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Community Sentence,10
+2020,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Immediate Custody,9
+2020,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Other,1
+2020,Not Stated,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,26
+2020,Not Stated,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,5
+2020,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,1
+2020,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,6
+2020,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,11
+2020,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,6
+2020,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,2
+2020,Not Stated,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,1
+2020,Not Stated,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,1
+2020,Not Stated,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,2
+2020,Not Stated,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,1
+2020,Not Stated,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,20
+2020,Not Stated,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,1
+2020,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,4
+2020,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,7
+2020,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,2
+2020,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,5
+2020,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,2
+2020,Not Stated,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,1
+2020,Not Stated,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,2
+2020,Not Stated,Adult (Aged 18 and over),Threatening - 0 Previous offences,Caution,1
+2020,Not Stated,Adult (Aged 18 and over),Threatening - 0 Previous offences,Suspended Sentence,1
+2020,Not Stated,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,29
+2020,Not Stated,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,3
+2020,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,20
+2020,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,9
+2020,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,3
+2020,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,20
+2020,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,4
+2020,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,11
+2020,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,6
+2020,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,2
+2020,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,1
+2020,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Caution,1
+2020,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,2
+2020,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Immediate Custody,1
+2020,Not Stated,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,2
+2020,Not Stated,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Caution,1
+2020,Not Stated,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Other,1
+2021,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,630
+2021,Female,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,155
+2021,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,80
+2021,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,171
+2021,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,222
+2021,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,83
+2021,Female,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,74
+2021,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,31
+2021,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,37
+2021,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,68
+2021,Female,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,19
+2021,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,221
+2021,Female,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,32
+2021,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,60
+2021,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,81
+2021,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,34
+2021,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,26
+2021,Female,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,20
+2021,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,8
+2021,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,11
+2021,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,11
+2021,Female,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,2
+2021,Female,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,31
+2021,Female,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,17
+2021,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Caution,1
+2021,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Community Sentence,4
+2021,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Suspended Sentence,12
+2021,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Immediate Custody,10
+2021,Female,Adult (Aged 18 and over),Threatening - 0 Previous offences,Other,4
+2021,Female,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Community Sentence,3
+2021,Female,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Suspended Sentence,2
+2021,Female,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Immediate Custody,12
+2021,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,119
+2021,Female,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,7
+2021,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,73
+2021,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,42
+2021,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,1
+2021,Female,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,3
+2021,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Caution,1
+2021,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,5
+2021,Female,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,1
+2021,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,47
+2021,Female,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,2
+2021,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,29
+2021,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,17
+2021,Female,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,1
+2021,Female,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,2
+2021,Female,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,5
+2021,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Caution,4
+2021,Female,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Community Sentence,1
+2021,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,5164
+2021,Male,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,2663
+2021,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,380
+2021,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,969
+2021,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,1951
+2021,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,1362
+2021,Male,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Other,502
+2021,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Caution,27
+2021,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,202
+2021,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Suspended Sentence,622
+2021,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,1610
+2021,Male,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,202
+2021,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,2974
+2021,Male,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,1153
+2021,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,495
+2021,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,869
+2021,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,573
+2021,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,582
+2021,Male,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,455
+2021,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Caution,30
+2021,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Community Sentence,140
+2021,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Suspended Sentence,249
+2021,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Immediate Custody,648
+2021,Male,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,86
+2021,Male,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,272
+2021,Male,Adult (Aged 18 and over),Threatening,Threatening - 1+ Previous offences,208
+2021,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Caution,3
+2021,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Community Sentence,20
+2021,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Suspended Sentence,82
+2021,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Immediate Custody,145
+2021,Male,Adult (Aged 18 and over),Threatening - 0 Previous offences,Other,22
+2021,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Caution,2
+2021,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Community Sentence,8
+2021,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Suspended Sentence,23
+2021,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Immediate Custody,163
+2021,Male,Adult (Aged 18 and over),Threatening - 1+ Previous offences,Other,12
+2021,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,1626
+2021,Male,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,364
+2021,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,695
+2021,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,820
+2021,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Immediate Custody,54
+2021,Male,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Other,57
+2021,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Caution,13
+2021,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,236
+2021,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Immediate Custody,88
+2021,Male,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Other,27
+2021,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,847
+2021,Male,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,136
+2021,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,401
+2021,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,385
+2021,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Immediate Custody,23
+2021,Male,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Other,38
+2021,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Caution,7
+2021,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,86
+2021,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Immediate Custody,30
+2021,Male,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Other,13
+2021,Male,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,78
+2021,Male,Juvenile (Aged 10 to 17),Threatening,Threatening - 1+ Previous offences,25
+2021,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Caution,17
+2021,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Community Sentence,44
+2021,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Immediate Custody,10
+2021,Male,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Other,7
+2021,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Community Sentence,13
+2021,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Immediate Custody,10
+2021,Male,Juvenile (Aged 10 to 17),Threatening - 1+ Previous offences,Other,2
+2021,Not Stated,Adult (Aged 18 and over),Blade or point,Blade or point - 0 Previous offences,19
+2021,Not Stated,Adult (Aged 18 and over),Blade or point,Blade or point - 1+ Previous offences,4
+2021,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Caution,4
+2021,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Community Sentence,3
+2021,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Suspended Sentence,8
+2021,Not Stated,Adult (Aged 18 and over),Blade or point - 0 Previous offences,Immediate Custody,4
+2021,Not Stated,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Community Sentence,1
+2021,Not Stated,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Immediate Custody,2
+2021,Not Stated,Adult (Aged 18 and over),Blade or point - 1+ Previous offences,Other,1
+2021,Not Stated,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 0 Previous offences,16
+2021,Not Stated,Adult (Aged 18 and over),Offensive weapon,Offensive weapon - 1+ Previous offences,1
+2021,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Caution,2
+2021,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Community Sentence,3
+2021,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Suspended Sentence,5
+2021,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Immediate Custody,1
+2021,Not Stated,Adult (Aged 18 and over),Offensive weapon - 0 Previous offences,Other,5
+2021,Not Stated,Adult (Aged 18 and over),Offensive weapon - 1+ Previous offences,Other,1
+2021,Not Stated,Adult (Aged 18 and over),Threatening,Threatening - 0 Previous offences,2
+2021,Not Stated,Adult (Aged 18 and over),Threatening - 0 Previous offences,Suspended Sentence,1
+2021,Not Stated,Adult (Aged 18 and over),Threatening - 0 Previous offences,Immediate Custody,1
+2021,Not Stated,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 0 Previous offences,24
+2021,Not Stated,Juvenile (Aged 10 to 17),Blade or point,Blade or point - 1+ Previous offences,1
+2021,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Caution,17
+2021,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 0 Previous offences,Community Sentence,7
+2021,Not Stated,Juvenile (Aged 10 to 17),Blade or point - 1+ Previous offences,Community Sentence,1
+2021,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 0 Previous offences,6
+2021,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon,Offensive weapon - 1+ Previous offences,3
+2021,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Caution,4
+2021,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 0 Previous offences,Community Sentence,2
+2021,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Community Sentence,2
+2021,Not Stated,Juvenile (Aged 10 to 17),Offensive weapon - 1+ Previous offences,Other,1
+2021,Not Stated,Juvenile (Aged 10 to 17),Threatening,Threatening - 0 Previous offences,2
+2021,Not Stated,Juvenile (Aged 10 to 17),Threatening - 0 Previous offences,Community Sentence,2
